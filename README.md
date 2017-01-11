@@ -1,7 +1,23 @@
 # 03-PiLamp
-Control a Philips HUE lamp with a raspberry using rotary encoders
+Control a Philips HUE lamp with a Raspberry PI using rotary encoders. The python program was written by Aurora Taraba, the video below shows the script in action.
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=3mecB9uydR0" target="_blank"><img src="http://img.youtube.com/vi/3mecB9uydR0/0.jpg" alt="Philips HUE controlled with Raspberry PI" width="480"  border="10" /></a>
 
-Requires Python Phue Library, to install sudo pip-3 install phue. More information about the library can be found here https://github.com/studioimaginaire/phue
+The image below shows how the Rasperry PI Zero and the rotary encoders where put together.
+<img src="https://github.com/tarababa/03-PiLamp/blob/master/img/RPiAndRotaryEncoders.JPG" alt="PiLamp Conroller" width="480">
 
-GPIOZERO does not include a rotary encoder class yet, were  using a version of the rotary encoder class which seems will be at some point included in a release of GPIO zero: https://github.com/RPi-Distro/python-gpiozero/pull/482/files/4a92c12f4110241867bab3fa4129490c658435cf..9039f42f9899eaaf77e35c3f4c84f27c5e211c97#diff-cb7fa96ad9b747a72f2b2b10e5956cf1
+#Functions
+
+#Requirements
+### Python Philips HUE Library
+The interface between the Raspberry PI and the Philips HUE bridge is established through the ![Python Phue Library](https://github.com/studioimaginaire/phue). To install ```sudo pip-3 install phue```.
+### Python Rotary Encoder Classes
+As the ![GPIOZero library](https://github.com/RPi-Distro/python-gpiozero) does not include a rotary encoder classes yet, we are  using a version of the rotary encoder classes written by ![Paulo Mateus](https://github.com/PedalPi/Physical/issues/1). The rotary encoder classes have been included in the repository of the PiLamp project (![rotaryEncoder.py](https://github.com/tarababa/03-PiLamp/blob/master/rotaryEncoder.py). 
+
+## Run PiLamp.py on startup
+Edit /etc/rc.local and add the following lines. (Obviously they must match the path to the `PiLamp.py` script).
+
+```
+# Run PiLamp.py
+(python3 /home/pi/03-PiLamp/PiLamp.py)&
+```
