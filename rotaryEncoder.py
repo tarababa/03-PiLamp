@@ -1,4 +1,23 @@
-# -*- coding: utf-8 -*-
+#
+#    This file is part of the PiLamp project.
+#
+#    The Rotary Encoder classes in this file are a contribution by Paulo Mateus to the GPIOZero project.
+#    As there is no GPIOZero release including these classes yet Paule Mateus has granted us unlimited
+#    usage of these classes as long as they are not used for evil. 
+#    Paulo Mateus' project can be found https://github.com/PedalPi/Physical/issues/1
+#
+#    PiLamp is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    PiLamp is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with PiLamp.  If not, see <http://www.gnu.org/licenses/>.
 from gpiozero import Device, DigitalInputDevice, Button, CompositeDevice
 
 
