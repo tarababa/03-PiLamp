@@ -13,7 +13,7 @@ Both rotary encoders are of the "clickable" variety i.e. they have a switch whic
 The lamp can be toggled on/off by pressing down on the shaft of the rotary encoder. Turning the rotary encoder changes the brightness of the light.
 
 ##Hue/Saturation
-Hue or Saturation can be changed by turning the rotary encoder, changing whether Hue or Saturation is affected is acomplished by pressing down on the shaft of the rotary encoder.
+Hue or Saturation can be changed by turning the rotary encoder, changing whether Hue or Saturation is affected is accomplished by pressing down on the shaft of the rotary encoder.
 
 #Requirements
 ### Python Philips HUE Library
