@@ -7,6 +7,13 @@ The image below shows how the Rasperry PI Zero and the rotary encoders where put
 <img src="https://github.com/tarababa/03-PiLamp/blob/master/img/RPiAndRotaryEncoders.JPG" alt="PiLamp Conroller" width="480">
 
 #Functions
+Both rotary encoders are of the "clickable" variety i.e. they have a switch which is activated when pressing down on the shaft of the rotary encoder.
+
+##On/Off & Brightness
+The lamp can be toggled on/off by pressing down on the shaft of the rotary encoder. Turning the rotary encoder changes the brightness of the light.
+
+##Hue/Saturation
+Hue or Saturation can be changed by turning the rotary encoder, changing whether Hue or Saturation is affected is acomplished by pressing down on the shaft of the rotary encoder.
 
 #Requirements
 ### Python Philips HUE Library
