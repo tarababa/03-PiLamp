@@ -2,9 +2,10 @@
 #    This file is part of the PiLamp project.
 #
 #    The Rotary Encoder classes in this file are a contribution by Paulo Mateus to the GPIOZero project.
-#    As there is no GPIOZero release including these classes yet Paule Mateus has granted us unlimited
+#    As there is no GPIOZero release yet which includes these classes Paulo Mateus has granted us unlimited
 #    usage of these classes as long as they are not used for evil. 
 #    Paulo Mateus' project can be found https://github.com/PedalPi/Physical/issues/1
+#    The GPIOZero project can be found here https://github.com/RPi-Distro/python-gpiozero
 #
 #    PiLamp is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -18,8 +19,8 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with PiLamp.  If not, see <http://www.gnu.org/licenses/>.
-from gpiozero import Device, DigitalInputDevice, Button, CompositeDevice
 
+from gpiozero import Device, DigitalInputDevice, Button, CompositeDevice
 
 class RotaryEncoder(Device):
     """
