@@ -19,7 +19,7 @@ Hue or Saturation can be changed by turning the rotary encoder, changing whether
 ### Python Philips HUE Library
 The interface between the Raspberry PI and the Philips HUE bridge is established through the ![Python Phue Library](https://github.com/studioimaginaire/phue). To install ```sudo pip-3 install phue```.
 ### Python Rotary Encoder Classes
-As the ![GPIOZero library](https://github.com/RPi-Distro/python-gpiozero) does not include a rotary encoder classes yet, we are  using a version of the rotary encoder classes written by ![Paulo Mateus](https://github.com/PedalPi/Physical/issues/1). The rotary encoder classes have been included in the repository of the PiLamp project (![rotaryEncoder.py](https://github.com/tarababa/03-PiLamp/blob/master/rotaryEncoder.py). 
+As the ![GPIOZero library](https://github.com/RPi-Distro/python-gpiozero) does not include a rotary encoder classes yet, we are  using a version of the rotary encoder classes written by ![Paulo Mateus](https://github.com/PedalPi/Physical/issues/1). The rotary encoder classes have been included in the repository of the PiLamp project (![rotaryEncoder.py](https://github.com/tarababa/03-PiLamp/blob/master/rotaryEncoder.py)). 
 
 ## Run PiLamp.py on startup
 Edit /etc/rc.local and add the following lines. (Obviously they must match the path to the `PiLamp.py` script).
