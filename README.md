@@ -26,5 +26,31 @@ Edit /etc/rc.local and add the following lines. (Obviously they must match the p
 
 ```
 # Run PiLamp.py
-(python3 /home/pi/03-PiLamp/PiLamp.py)&
+python3 /home/pi/03-PiLamp/PiLamp.py > /dev/null 2>&1 &
+```
+
+We ran into a couple of problems when trying to start the PiLamp.py script automatically using this method:
+
+* When attempting to create the bridge object the phue library looks for a configuration file containing username, IP address etc. When none is provided this config file goes into the user's home directory. When starting on boot rc.local is run as root, it is not a good idea to have the config file in the home directory of root thus we explicitely specificy the path and name of the configuration file when creating the bridge. The directory the PiLamp.py file resides in is used for the configuration file.
+```Python
+PHUE_CONFIG_FILE  =  os.path.dirname(os.path.realpath(__file__))+'/.python_hue'
+...
+...
+bridge = Bridge (ip = IP_ADDRESS_BRIDGE, config_file_path = PHUE_CONFIG_FILE )
+```
+
+* When getting the list of light objects from the bridge a "Network unreachable" error is raised when running PiLamp.py on boot probably because the network is not quite ready at that point in time. A try/except section was added to catch this situation and retry until the network is ready and the light objects list can be obtained. A bit crude perhaps but it works.
+```python
+  #get list of lights
+  done = False
+  while not done:
+    try:  
+      light_names = bridge.get_light_objects('name')
+      done = True
+    except OSError as e:
+      # an IOError exception occurred (socket.error is a subclass)
+      if e.errno == 101: #Network is unreachable
+        print('Network unreachable, going to try again to get light objects')
+      else: 
+        raise            #all is lost
 ```
