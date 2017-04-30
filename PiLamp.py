@@ -34,6 +34,7 @@ try:
   done = False
   while not done:
     try:
+      IP_ADDRESS_BRIDGE = Bridge.get_ip_address( None )
       bridge = Bridge (ip = IP_ADDRESS_BRIDGE, config_file_path = PHUE_CONFIG_FILE )
       done = True
     except OSError as e:
