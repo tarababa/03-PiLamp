@@ -47,15 +47,21 @@ try:
   #get list of lights
   done = False
   while not done:
-    try:  
-      light_names = bridge.get_light_objects('name')
+    try:
+      IP_ADDRESS_BRIDGE = Bridge.get_ip_address( None )
+      print( IP_ADDRESS_BRIDGE )
+      bridge = Bridge (ip = IP_ADDRESS_BRIDGE, config_file_path = PHUE_CONFIG_FILE )
       done = True
+    except socket.gaierror:
+      print('Name or service not known, going to try again')
     except OSError as e:
       # an IOError exception occurred (socket.error is a subclass)
       if e.errno == 101: #Network is unreachable
-        print('Network unreachable, going to try again to get light objects')
-      else: 
+        print('Network unreachable, going to try again')
+      else:
+        print('All is lost' + str(e.errno))
         raise            #all is lost
+
       
   #Initialization of brightness, hue and saturation
   brightness  = light_names[PI_LIGHT].brightness 
